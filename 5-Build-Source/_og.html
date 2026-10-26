@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Social card</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #142530; }
+  .card { position: relative; width: 1200px; height: 630px; padding: 64px 72px; color: #E7EBEE;
+    background: radial-gradient(900px 420px at 90% -10%, rgba(255,80,80,.25), transparent 60%), #142530; }
+  .card::after { content: ""; position: absolute; inset: 0; background-image: url("assets/hex.svg"); background-size: 120px auto; opacity: .6;
+    mask-image: linear-gradient(90deg, transparent 40%, #000 100%); -webkit-mask-image: linear-gradient(90deg, transparent 40%, #000 100%); }
+  .in { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
+  img { height: 44px; width: auto; align-self: flex-start; }
+  .k { margin-top: 56px; color: #FF5050; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 20px; }
+  h1 { color: #fff; font-weight: 500; font-size: 62px; line-height: 1.05; margin: 18px 0 0; max-width: 960px; letter-spacing: -0.02em; }
+  h1 span { color: #FF5050; }
+  .foot { margin-top: auto; display: flex; gap: 28px; font-size: 21px; color: #C9D0D5; }
+  .foot b { color: #fff; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card"><div class="in">
+  <img src="assets/redbelly-logo-negative.svg" alt="Redbelly">
+  <div class="k">Community explainer · Not legal advice</div>
+  <h1>Australia's Digital Assets Framework Act: what it means for <span>Tokeniser</span></h1>
+  <div class="foot"><span><b>Starts</b> 8 Apr 2027</span><span><b>Apply by</b> 7 Oct 2027</span><span><b>Regulator</b> ASIC</span></div>
+</div></div>
+</body>
+</html>
