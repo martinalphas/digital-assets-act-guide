@@ -1,0 +1,194 @@
+{
+  "checked_at": "26 October 2026, 13:02 UTC",
+  "results": [
+    {
+      "id": "S1",
+      "url": "https://www.legislation.gov.au/C2026A00038/asmade/text",
+      "status": 200,
+      "note": "5/5 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S2",
+      "url": "https://www.asic.gov.au/about-asic/news-centre/news-items/asics-roadmap-for-digital-assets-law-reform-implementation",
+      "status": 200,
+      "note": "3/3 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S3",
+      "url": "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-245mr-asic-consults-on-implementation-of-new-digital-asset-laws",
+      "status": 200,
+      "note": "4/4 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S4",
+      "url": "https://www.asic.gov.au/regulatory-resources/find-a-document/consultations/cp-392-digital-asset-law-reform-implementation-proposed-standards-and-guidance",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S5",
+      "url": "https://download.asic.gov.au/media/0pqj5lgc/cp392-published-15-october-2026.pdf",
+      "status": 200,
+      "note": "3/3 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S6",
+      "url": "https://download.asic.gov.au/media/a3cpo5ds/attachment-1-to-cp392-published-15-october-2026.pdf",
+      "status": 200,
+      "note": "3/3 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S7",
+      "url": "https://download.asic.gov.au/media/npwojlkb/user-guide-for-cp392-published-15-october-2026.pdf",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S8",
+      "url": "https://www.asic.gov.au/about-asic/news-centre/news-items/asic-extends-no-action-position-for-digital-asset-businesses-to-30-september-2026",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S9",
+      "url": "https://asic.gov.au/about-asic/news-centre/find-a-media-release/2025-releases/25-250mr-updated-asic-guidance-supports-digital-asset-innovation-and-boosts-investor-protection/",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S10",
+      "url": "https://asic.gov.au/about-asic/news-centre/news-items/deadline-looms-for-digital-asset-businesses-to-apply-for-a-licence",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S11",
+      "url": "https://tokeniser.com",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S12",
+      "url": "https://tokeniser.com/technology",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S13",
+      "url": "https://tokeniser.com/protocol-finance",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S14",
+      "url": "https://tokeniser.com/product/superpowers/automated-compliance",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S15",
+      "url": "https://tokeniser.com/resources/knowledge-hub/australia/how-tokeniser-handles-investor-compliance",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S16",
+      "url": "https://tokeniser.com/resources/knowledge-hub/platform/what-is-self-custodial-asset-administration",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S17",
+      "url": "https://redbelly.network/asset-tokenisation",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S18",
+      "url": "https://docs.redbelly.network",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S19",
+      "url": "https://docs.redbelly.network/pages/eligibility-sdk/onboarding/individual/overview/",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S20",
+      "url": "https://vine.redbelly.network/identity/eligibility/",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S21",
+      "url": "https://vine.redbelly.network/identity/verifiable-credentials/",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S22",
+      "url": "https://vine.redbelly.network/identity/user-access/",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S23",
+      "url": "https://vine.redbelly.network/identity/accredited-issuers/",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S24",
+      "url": "https://vine.redbelly.network/nodes/become-operator/",
+      "status": 200,
+      "note": "3/3 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S25",
+      "url": "https://vine.redbelly.network/consensus/",
+      "status": 200,
+      "note": "1/1 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S26",
+      "url": "https://eips.ethereum.org/EIPS/eip-3643",
+      "status": 200,
+      "note": "3/3 cited phrases found",
+      "missing": []
+    },
+    {
+      "id": "S27",
+      "url": "https://redbelly.network/projectacacia",
+      "status": 200,
+      "note": "2/2 cited phrases found",
+      "missing": []
+    }
+  ]
+}

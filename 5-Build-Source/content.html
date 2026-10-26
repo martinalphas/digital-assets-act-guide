@@ -1,0 +1,322 @@
+<section id="notice" class="notice" aria-labelledby="notice-h">
+  <h2 id="notice-h">General information only. This is not legal advice.</h2>
+  <p>This explainer summarises public sources as at <strong>26 October 2026</strong>. It is general information, not legal, financial, tax or investment advice. It does not recommend buying, selling or holding any digital asset or financial product, and it says nothing about prices or returns.</p>
+  <p>It does not say that Redbelly, Tokeniser or any issuer is licensed or compliant under the new law, and it should not be read that way. ASIC's standards and guidance are still drafts and may change. Get advice from a qualified Australian lawyer before acting on anything here.</p>
+  <p class="small">This is an independent community explainer prepared for review by the Redbelly DAO. It is not an official publication of Redbelly Network, Tokeniser, ASIC or the Australian Government.</p>
+</section>
+
+<section id="how-to-read" aria-labelledby="how-h">
+  <h2 id="how-h">How to read this explainer</h2>
+  <p>Every factual statement links to a numbered source (S1, S2 and so on) with a pinpoint, such as a section of the Act or a paragraph of an ASIC paper. The full list is in <a href="#sources">Sources</a>. The labels below separate what the law says from what others say and from our own reading.</p>
+  <ul class="legend">
+    <li><span class="tag law">The Act says</span> What the Act itself says.</li>
+    <li><span class="tag asic">ASIC says</span> ASIC's statements. Where ASIC is only proposing something, the text says <em>draft</em>.</li>
+    <li><span class="tag company">Company statement</span> What Redbelly or Tokeniser say about themselves. We have not verified these claims.</li>
+    <li><span class="tag analysis">Our analysis</span> The writer's interpretation. This is not settled law.</li>
+  </ul>
+</section>
+
+<section id="glance" aria-labelledby="glance-h">
+  <p class="eyebrow">01</p>
+  <h2 id="glance-h">The short version</h2>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <p>The <em>Corporations Amendment (Digital Assets Framework) Act 2026</em> adds two new kinds of financial product to the Corporations Act: <strong>digital asset platforms (DAPs)</strong> and <strong>tokenised custody platforms (TCPs)</strong>. [[S1|Sch 1 item 2, s 764A(1)(la)–(lb)]]</p>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <ul>
+      <li><strong>What changes:</strong> businesses that run these platforms will need an Australian financial services (AFS) licence, unless an exemption applies. They will also have to give customers disclosure documents and platform rules, and meet ASIC standards on holding assets, trading and settlement, and capital. [[S3|26-245MR]] [[S6|RG 000.7–000.8]]</li>
+      <li><strong>When:</strong> Royal Assent was 8 April 2026. The Act starts on <strong>8 April 2027</strong>, which is also when licence applications open. Platforms already operating must apply by <strong>7 October 2027</strong> and can keep operating while ASIC assesses them. [[S1|s 2]] [[S5|p 5, para 45]] <a href="#date-note">Why not 9 April?</a></li>
+    </ul>
+  </div>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <p><strong>Who is not caught:</strong> small platforms that meet strict low-value conditions; people who only tell others about a platform, or arrange for them to use it, as a minor part of their business; and qualifying public digital token infrastructure, along with the people who validate it. [[S1|s 911A(2)(ja)–(jb), s 9E, s 766A(3)(b)]]</p>
+  </div>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p><strong>For issuers using Tokeniser:</strong> the Act regulates platforms, not the act of issuing a token. A fund or company that issues its units or shares on-chain still has to follow the existing rules for that product. The new rules matter if anyone holds tokens or keys for investors, or if an issuer creates one token for each asset it holds in custody. The biggest open question is whether Redbelly meets the Act's test for "public digital token infrastructure". [[S6|RG 000.35, 000.46–000.48]] [[S12|Technology]]</p>
+  </div>
+</section>
+
+<section id="why" aria-labelledby="why-h">
+  <p class="eyebrow">02</p>
+  <h2 id="why-h">What the Act is, and why it was introduced</h2>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <p>The Act carries out the Government's commitment to modernise Australia's rules for digital assets. It fills regulatory gaps that left the industry unsure where it stood. Its aims are to foster innovation, strengthen competition and growth, and strengthen Australia's position in the global digital asset ecosystem. It amends both the Corporations Act and the ASIC Act. [[S5|paras 2–5]]</p>
+    <p>ASIC's approach follows the principle of "same activity, same risk, same regulatory outcome". ASIC Commissioner Alan Kirkland said that bringing these platforms into the financial services framework "means consumers can have greater confidence when trading digital assets". [[S3|26-245MR]]</p>
+    <p>ASIC also says the regime cannot remove all risk. Many digital assets are high-risk speculative investments and will stay that way, and consumers could lose the entire value of their investment. [[S5|para 14]]</p>
+    <p>The reforms bring Australia closer to overseas regimes, including the EU's Markets in Crypto-Assets Regulation (MiCA), Singapore and Hong Kong, which followed IOSCO's 2023 recommendations. [[S5|paras 8–9]]</p>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <p><strong>It builds on existing law.</strong> ASIC's view is that financial services law is broad and technology-neutral and already applies to many digital assets. In October 2025 ASIC updated its Information Sheet 225 (INFO 225), which lists tokenised securities among the digital assets it treats as financial products. It also gave a sector-wide "no-action" position to firms moving to licensing. That deadline was first 30 June 2026 and was later extended to 30 September 2026. [[S9|25-250MR]] [[S8|25 June 2026]] [[S3|Background]]</p>
+  </div>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p>Before this Act, whether a crypto exchange or custodian needed a licence depended mostly on whether the tokens it handled were themselves financial products. Under the Act, <strong>the platform itself is the financial product</strong>, separate from the tokens on it. So the platform needs a licence whatever kind of tokens it holds. ASIC puts it this way: the platform is a financial product, while the assets on it "may or may not be". [[S6|RG 000.20]] [[S5|para 53]]</p>
+  </div>
+</section>
+
+<section id="terms" aria-labelledby="terms-h">
+  <p class="eyebrow">03</p>
+  <h2 id="terms-h">The key ideas in plain English</h2>
+  <div class="table-wrap">
+  <table class="terms">
+    <thead><tr><th scope="col">Term</th><th scope="col">What it means</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Digital token</th><td>An electronic record that someone can "factually control": they can transfer it, stop others transferring it, and show that they can do both. A bank's account ledger is not a digital token, because the bank changes the balance rather than moving the record.</td><td>[[S1|s 761GB(1)–(2), Note 3]]</td></tr>
+      <tr><th scope="row">Possession</th><td>You "possess" a token if you can factually control it, and more than one person can. But you do not share possession if you need someone else's express cooperation and they can act alone.</td><td>[[S1|s 86(2)–(3), s 761GB(3)]]</td></tr>
+      <tr><th scope="row">Digital asset platform (DAP)</th><td>An arrangement where an operator possesses digital tokens <em>for or on behalf of</em> clients, for example as trustee or on the client's instructions. ASIC says an operator may simply hold tokens, or may also offer buying, selling, swapping, staking or lending.</td><td>[[S1|s 761GC]] [[S6|RG 000.36–000.39]]</td></tr>
+      <tr><th scope="row">Tokenised custody platform (TCP)</th><td>An operator holds an asset other than money, creates a single token for each asset, and whoever holds the token can redeem the asset or direct its delivery. ASIC's example is gold held in custody. If something meets both definitions, it is a TCP, not a DAP.</td><td>[[S1|s 761GD, s 761GC(4)]] [[S7|p 1]]</td></tr>
+      <tr><th scope="row">Public digital token infrastructure (PDTI)</th><td>Software or hardware for sending, processing or recording tokens. Its rules (protocols) must be open-source and publicly accessible, must let <em>any person</em> contribute (for example by validating), and must not depend on any single critical participant. Infrastructure can also qualify if regulations prescribe it. PDTI is not a managed investment scheme or a financial product, and validating it is not a financial service.</td><td>[[S1|s 9E; s 9 "managed investment scheme" (mf); s 765A(1)(xa); s 766A(3)(b)]]</td></tr>
+      <tr><th scope="row">Wrapped token</th><td>A token you can redeem for another asset. The redemption right is ignored when deciding whether the wrapped token is a financial product. This does not apply if holders get rights that differ from holding the asset directly.</td><td>[[S1|s 765E]]</td></tr>
+      <tr><th scope="row">Custodial staking</th><td>A platform stakes clients' tokens with their express authority and passes on the rewards after fees. If the platform's issuer holds the right AFS licence, the staking part is not treated as a separate managed investment scheme.</td><td>[[S1|s 9F; s 9 "managed investment scheme" (me)]]</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="licence" aria-labelledby="licence-h">
+  <p class="eyebrow">04</p>
+  <h2 id="licence-h">Who needs a licence, and who does not</h2>
+
+  <h3>Running a platform</h3>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <ul>
+      <li>DAPs and TCPs become financial products, unless the platform is a managed investment scheme. [[S1|s 764A(1)(la)–(lb)]]</li>
+      <li>Platform services must be provided by, or on behalf of, a "constitutionally-covered corporation", a term the Act defines by reference to the Constitution. Breaching this is a civil penalty matter. [[S1|s 766M; s 9]]</li>
+      <li>A licensed operator must comply with ASIC's asset-holding standards and transactional and settlement standards, have platform rules with set content, and obey any ministerial ban on particular products. [[S1|ss 912BB–912BD, 912BG]]</li>
+    </ul>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <ul>
+      <li>If you operate a DAP or TCP, you need an AFS licence to issue it, unless an exemption applies. [[S6|RG 000.8, RG 000.78]]</li>
+      <li><em>Draft:</em> ASIC proposes separate "issue" authorisations for five business models: custody-only DAP, DAP acting as agent, DAP acting as principal, DAP as trading venue provider, and TCP operator. [[S6|Table 4, RG 000.90]]</li>
+      <li><em>Draft:</em> you cannot issue a DAP or TCP as another licensee's corporate authorised representative. The issuer must hold the authorisation itself, apart from a limited related-party exception expected in regulations. [[S6|RG 000.82–000.85]]</li>
+      <li>If a facility is a trading venue for tokens that <em>are</em> financial products, the financial market or clearing and settlement licensing regime can apply instead. [[S6|RG 000.60–000.62]]</li>
+    </ul>
+  </div>
+
+  <h3>People around the platform</h3>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <p>The Act creates a new kind of "dealing": a client of a platform who uses it on behalf of <em>their own</em> customers is dealing in it. Using a platform for your own internal purposes is not dealing. [[S1|s 766C(1)(ca) and note]]</p>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <p><em>Draft:</em> you may also need a licence if you advise on a DAP or TCP, arrange for someone else to use one or be issued one, or use one on behalf of others. [[S6|RG 000.67, Table 2, RG 000.80]]</p>
+  </div>
+
+  <h3>Exemptions</h3>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <ul>
+      <li><strong>Low-value DAPs.</strong> The issuer does not need a licence only if all four conditions are met:
+        <ol>
+          <li>no financial products are held on any DAP issued by its closely-related group;</li>
+          <li>the total value of transactions through those DAPs in the last 12 months is <strong>$10 million or less</strong>;</li>
+          <li>each time a token is added for a client, that client's total entry value across those DAPs is <strong>$5,000 or less</strong>;</li>
+          <li>it has lodged a notice with ASIC saying it relies on the exemption.</li>
+        </ol>
+        Regulations can raise these amounts. [[S1|s 911A(2)(ja), (4B), (6)]]</li>
+      <li><strong>Limited advice and arranging.</strong> You only tell someone a DAP or TCP exists and/or arrange for them to use it, in the ordinary course of your business, and this is not a significant part of your business. [[S1|s 911A(2)(jb)]]</li>
+      <li><strong>Validators of PDTI.</strong> Taking part in consensus on qualifying public digital token infrastructure is not a financial service. [[S1|s 766A(3)(b), s 9E]]</li>
+    </ul>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <p><em>Draft:</em> the low-value thresholds are expected to rise with inflation under regulations. Further exemptions for sub-custodians, overseas arrangements, overseas related companies and nominee companies are expected in regulations that are not yet made. A platform that relies on an exemption is still a DAP or TCP. [[S6|Table 3, RG 000.76]] [[S5|para 38]]</p>
+  </div>
+
+  <h3>Usually outside the regime</h3>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <ul>
+      <li>Holding tokens does not on its own make something a DAP. The operator must hold them <em>for or on behalf of</em> a client. [[S6|RG 000.37]]</li>
+      <li><em>Draft:</em> a technology provider that does not possess tokens for clients is not a DAP. Some multi-party computation (MPC) providers are expected not to count as possessing tokens under the coming regulations. [[S6|RG 000.41(b)]]</li>
+      <li><em>Draft:</em> a "native" tokenised fund, where each token is a unit in a unit trust and the blockchain is the main unit register, would generally be a managed investment scheme, not a TCP. [[S6|RG 000.35 note]]</li>
+    </ul>
+  </div>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p>If you hold your own tokens in a wallet you control, no operator holds them for you, so on the definition no DAP is involved. [[S1|s 761GC(1)]]</p>
+  </div>
+
+  <div class="steps" role="group" aria-label="ASIC's seven questions">
+    <h3>ASIC's seven questions, simplified</h3>
+    <p class="small">Simplified from ASIC's draft Figure 1. [[S6|Figure 1]] It is a reading aid, not a test of your situation.</p>
+    <ol>
+      <li><strong>Is the electronic record a digital token?</strong> If not, the DAP/TCP regime does not apply (other laws may).</li>
+      <li><strong>Do you hold an asset and record the right to redeem it with a token?</strong> If so, consider the TCP rules.</li>
+      <li><strong>Do you hold digital tokens for clients and act on their instructions?</strong> If so, consider the DAP rules. If neither 2 nor 3 applies, the regime does not apply.</li>
+      <li><strong>Are any of the underlying assets financial products?</strong> If you run a neutral trading venue for them, you may need a market or clearing and settlement licence.</li>
+      <li><strong>Are you the operator, or the operator's agent?</strong> If not, you may still be advising, arranging or using a platform for others.</li>
+      <li><strong>Does an exemption apply?</strong> If so, no AFS licence is needed to operate the platform. Keep records to show the exemption applies.</li>
+      <li><strong>Otherwise,</strong> you need an AFS licence to issue the platform, and you must meet the obligations that come with it.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="timeline" aria-labelledby="timeline-h">
+  <p class="eyebrow">05</p>
+  <h2 id="timeline-h">Timeline</h2>
+  <ol class="timeline">
+    <li class="past"><time>29 Oct 2025</time><div>ASIC updates INFO 225 and starts a sector-wide no-action position for firms moving to licensing under existing law. [[S9|25-250MR]]</div></li>
+    <li class="past"><time>26 Nov 2025</time><div>Second reading speech on the Bill in the House of Representatives. Senate speech on 5 February 2026. [[S1|endnote]]</div></li>
+    <li class="past"><time>1 Apr 2026</time><div>Parliament passes the Act. [[S2|Roadmap]] [[S5|para 1]]</div></li>
+    <li class="past key"><time>8 Apr 2026</time><div><strong>Royal Assent.</strong> [[S1|assent line]] [[S5|para 1]]</div></li>
+    <li class="past"><time>20 Apr 2026</time><div>ASIC publishes its 18-month implementation roadmap. [[S2|Roadmap]]</div></li>
+    <li class="past"><time>25 Jun 2026</time><div>ASIC extends the INFO 225 no-action deadline from 30 June to 30 September 2026. [[S8|news item]]</div></li>
+    <li class="past"><time>30 Sep 2026</time><div>No-action deadline for applying for a licence under the <em>existing</em> law. [[S8|news item]] [[S3|Background]]</div></li>
+    <li class="past"><time>15 Oct 2026</time><div>ASIC releases Consultation Paper 392: a draft regulatory guide, draft asset-holding standards, draft transactional and settlement standards, and draft financial requirements. [[S4|CP 392]] [[S3|26-245MR]]</div></li>
+    <li class="next"><time>27 Nov 2026</time><div>Submissions on CP 392 close at 5pm AEDT (fintech@asic.gov.au). [[S3|26-245MR]]</div></li>
+    <li><time>Nov 2026 – Mar 2027</time><div>ASIC reviews feedback and settles its guidance. Final instruments and guidance are planned for March 2027. [[S5|p 5, stages 3–4]]</div></li>
+    <li class="key"><time>8 Apr 2027</time><div><strong>The Act commences</strong> and applications for DAP and TCP authorisations open. [[S1|s 2]] [[S5|p 5, para 45]]</div></li>
+    <li><time>8 Apr – 7 Oct 2027</time><div><strong>Six-month transition period.</strong> If you do not hold a licence covering the service, the new rules do not apply to it during this window. If you apply within the window, they do not apply until the day after ASIC decides your application. [[S1|ss 1730, 1732]]</div></li>
+    <li class="key"><time>7 Oct 2027</time><div><strong>Last day</strong> for existing firms to apply for a new licence or a variation. [[S5|p 5, para 45]]</div></li>
+    <li><time>8 Oct 2027</time><div>Operators need a DAP or TCP authorisation unless they applied in time or an exemption applies. If you did not apply, the new rules apply straight after the transition period. [[S5|para 39]] [[S1|s 1732 note]]</div></li>
+    <li><time>From Oct 2027</time><div>Full implementation, including ASIC supervision and enforcement ("Month 18 onwards" in ASIC's roadmap). [[S2|Roadmap]]</div></li>
+  </ol>
+
+  <aside id="date-note" class="callout" aria-labelledby="date-h">
+    <h3 id="date-h">Why 8 April 2027 and not 9 April?</h3>
+    <div class="claim law"><span class="tag law">The Act says</span>
+      <p>The Act starts on "the day after the end of the period of 12 months beginning on the day this Act receives the Royal Assent". The commencement table published with the Act gives the date as 8 April 2027. [[S1|s 2]]</p>
+    </div>
+    <div class="claim asic"><span class="tag asic">ASIC says</span>
+      <p>ASIC's October 2026 consultation material says the laws commence on 8 April 2027. [[S3|26-245MR]] [[S5|p 5]] [[S7|p 1]] Earlier ASIC pages, including the April 2026 roadmap and a May 2026 news item, said 9 April 2027. [[S2|Roadmap]] [[S10|4 May 2026]]</p>
+    </div>
+    <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+      <p>This explainer uses 8 April 2027 because it matches the Act's commencement table and ASIC's most recent material. The two dates are one day apart. If exact timing matters to you, confirm it with ASIC or your adviser.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="issuers" aria-labelledby="issuers-h">
+  <p class="eyebrow">06</p>
+  <h2 id="issuers-h">What changes for issuers who tokenise through Tokeniser</h2>
+
+  <h3>What Tokeniser says about itself</h3>
+  <div class="claim company"><span class="tag company">Company statement</span>
+    <ul>
+      <li>Tokeniser is a Redbelly Network project. It runs on Redbelly, which it calls "Australia's public digital token infrastructure". [[S11|Home]] [[S12|Technology]]</li>
+      <li>It says products issued through Tokeniser "operate under an Asset Issuer's existing licensing". [[S11|FAQ]]</li>
+      <li>It says it programs eligibility checks into every asset (identity, KYC, AML/CTF, wholesale and sophisticated investor tests, and target market determinations), and checks each holder and transfer. [[S11|FAQ]] [[S15|Knowledge Hub]]</li>
+      <li>It uses the ERC-3643 and ERC-7575 token standards. [[S13|Protocol Finance]]</li>
+      <li>It says it is built for professional fund administration, not retail self-custody, and provides key management and recovery for institutional investors. [[S16|Knowledge Hub]]</li>
+      <li>It lists its own "guardrails": the offer is still regulated; regulations can move the line on what counts as public infrastructure; a protocol with a controlling foundation or admin key has to show it is decentralised; and tokens that carry financial-product rights are regulated on their substance. [[S13|Guardrails]]</li>
+    </ul>
+    <p class="small">These are Tokeniser's own statements. This explainer has not verified them. None of the sources we reviewed says that Tokeniser or Redbelly is licensed or compliant under the new regime, which has not yet started.</p>
+  </div>
+
+  <h3>What stays the same</h3>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <ul>
+      <li>ASIC considers tokenised securities to be financial products under existing law. [[S9|25-250MR]] Firms must keep complying with existing licensing requirements while the reforms are rolled out. [[S2|Roadmap]]</li>
+      <li><em>Draft:</em> a token created under a TCP over a financial product is generally the same kind of financial product as the underlying asset. [[S6|RG 000.46–000.48]]</li>
+      <li><em>Draft:</em> a "native" tokenised fund, where the blockchain is the main unit register, would generally be a managed investment scheme, not a TCP. [[S6|RG 000.35 note]]</li>
+    </ul>
+  </div>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p>Take a fund or company that issues its own units or shares on-chain through Tokeniser, where investors hold them in their own wallets. For that issuer, the Act is unlikely to change the core product rules. The offer documents, target market determinations, anti-money laundering checks and existing licence still do the work. The Act adds rules for platforms, and an issuer is affected only if what it does, or what someone does for it, fits a platform definition.</p>
+  </div>
+
+  <h3>Where the new rules can reach an issuer</h3>
+  <div class="table-wrap">
+  <table class="reach">
+    <thead><tr><th scope="col">If you…</th><th scope="col">What the law says</th><th scope="col">Our analysis: what to check</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Hold investors' tokens or keys, or appoint someone to do it</th><td>Possessing tokens for clients is the core of a DAP. Whatever an agent does counts as done by the operator. [[S1|ss 761GC, 761GE]] <em>Draft:</em> ASIC proposes a "custody-only DAP" authorisation. [[S6|RG 000.43, Table 4]]</td><td>Who can move investor tokens? If it is anyone other than the investor, that party may be operating a DAP and need a licence or an exemption.</td></tr>
+      <tr><th scope="row">Hold a real asset and mint one redeemable token for each asset</th><td>That is a TCP. The operator needs a licence and must have platform rules. Before issuing to retail clients, it must give them a DAP/TCP Guide and have a voting policy. [[S1|ss 761GD, 912BC, 912BG, 1020AN, 1020AP]]</td><td>Is the structure a TCP, or a managed investment scheme? Divisibility and "same class of asset" limits matter. [[S1|s 9 "managed investment scheme" (md)]]</td></tr>
+      <tr><th scope="row">Raise money with a prospectus through a DAP or TCP</th><td>You must promptly tell the platform operator and each custodian about supplementary or replacement documents, stop orders and withdrawals. The prospectus need not describe the platform. [[S1|s 741A]]</td><td>Build these notifications into your offer process.</td></tr>
+      <tr><th scope="row">Want secondary trading</th><td>A venue for tokens that are financial products may need a market licence. A DAP trading venue needs its own authorisation. The PDTI carve-outs help only if the infrastructure qualifies. [[S6|RG 000.60–000.62, Table 4]] [[S1|s 9E]]</td><td>Map exactly where trades are matched and settled, and which regime covers each step.</td></tr>
+      <tr><th scope="row">Use distributors who promote or explain the platform</th><td>The limited advice and arranging exemption applies only if this is not a significant part of their business. Otherwise they need an authorisation. [[S1|s 911A(2)(jb)]] [[S6|RG 000.80]]</td><td>Check your distributors' licences before 8 April 2027.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>An open question: do admin powers count as "possession"?</h3>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <p>A person possesses a token if they can transfer it, stop others from transferring it, and show they can do both. It does not matter that someone else can do these things too. [[S1|s 761GB(2)–(3), s 86(2)]]</p>
+  </div>
+  <div class="claim company"><span class="tag company">Technical standard</span>
+    <p>ERC-3643, which Tokeniser says it uses, requires tokens to have a recovery system and to be able to freeze investor wallets, pause the token and let an agent force transfers. [[S26|ERC-3643]] [[S13|Protocol Finance]]</p>
+  </div>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p>An issuer or agent with freeze and forced-transfer powers may be able to do all three things in the possession test. The Act does not say directly whether compliance powers like these mean the issuer (or a platform) "possesses" investors' tokens "for or on behalf of" them, which is the heart of a DAP. ASIC's draft guide gives some MPC technology providers expected relief, but we found no equivalent statement about token admin powers. [[S6|RG 000.41(b)]] Issuers should get advice on this point and watch the final regulations and guidance.</p>
+  </div>
+
+  <div class="callout questions">
+    <h3>Five questions to take to your lawyer</h3>
+    <p class="small"><span class="tag analysis">Our analysis</span></p>
+    <ol>
+      <li>Apart from the investor, who can move, freeze or recover investor tokens: us, Tokeniser, or an agent? Could that be "possession"?</li>
+      <li>Is our product a managed investment scheme, a security, or an asset held on a TCP?</li>
+      <li>Will any retail clients be involved, which would trigger the DAP/TCP Guide?</li>
+      <li>Where will secondary trading happen, and which regime covers that venue?</li>
+      <li>Do our current licence authorisations cover what we will do from 8 April 2027, or do we need a variation by 7 October 2027?</li>
+    </ol>
+  </div>
+
+  <h3>What holders can expect from licensed platforms</h3>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <ul>
+      <li>Retail clients must get a DAP/TCP Guide before the platform is issued to them. It must cover risks, fees, custodians and how holders' rights differ from holding the asset directly. [[S1|ss 1020AN–1020AO]]</li>
+      <li>Platform rules have effect as a contract between the operator and each client. [[S1|s 912BG(2)]]</li>
+      <li>ASIC's asset-holding standards must require money held under a platform to be held in trust for clients. [[S1|s 912BE(2)(b)]]</li>
+    </ul>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <p>ASIC's planned standards cover holding assets on trust, keeping client assets separate, reconciliation and withdrawal rights. <em>Draft:</em> ASIC may publish a list of firms that apply by 7 October 2027. A licensed platform does not make the tokens on it low-risk. [[S2|Table 1]] [[S5|proposal A4, paras 14, 53]]</p>
+  </div>
+</section>
+
+<section id="redbelly" aria-labelledby="redbelly-h">
+  <p class="eyebrow">07</p>
+  <h2 id="redbelly-h">Where Redbelly's built-in compliance fits, and where it is unclear</h2>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p>The table compares requirements in the Act and ASIC's drafts with features described in Redbelly's and Tokeniser's own documents. <strong>"Could help"</strong> means the feature could help a licensee meet the requirement. It does <strong>not</strong> mean anyone is compliant. The legal duties fall on the licensed operator or issuer, not on the technology.</p>
+  </div>
+  <div class="table-wrap">
+  <table class="fit">
+    <thead><tr><th scope="col">Requirement</th><th scope="col">Design feature described in the docs</th><th scope="col">Our read</th></tr></thead>
+    <tbody>
+      <tr><td>Platform rules must set <strong>transparent, non-discriminatory eligibility criteria</strong> for who can become a client. [[S1|s 912BG(1)(a)]]</td><td>Receptor, Redbelly's identity protocol, lets developers program eligibility criteria into smart contracts using W3C verifiable credentials, checked by zero-knowledge "Proof by Query" or off-chain "Selective Disclosure". [[S18|Home]] [[S20|Eligibility]] [[S21|VCs]]</td><td><span class="pill ok">Could help</span> Code can enforce the criteria. The criteria must still be written into the platform rules, and enforcing them in code does not by itself make them fair or transparent.</td></tr>
+      <tr><td><strong>Knowing who clients are.</strong> The Act's text does not itself set KYC rules; those come from other laws. [[S1|whole Act]]</td><td>Network access needs a credential from an accredited issuer, based on a passport and biometric checks. The onboarding SDK covers wallet authentication, KYC and on-chain permissions. [[S22|User access]] [[S19|SDK]] [[S23|Accredited issuers]]</td><td><span class="pill ok">Could help</span> Developers choose which credential issuers they trust, so the licensee still decides what it relies on. [[S20|Eligibility]]</td></tr>
+      <tr><td>Platform rules must state the <strong>settlement method</strong>, who bears the risk, and how changes are communicated. [[S1|s 912BG(1)(c)–(d)]]</td><td>Leaderless DBFT consensus with deterministic, quasi-instant finality. Redbelly says the chain cannot fork. [[S25|Consensus]]</td><td><span class="pill ok">Could help</span> Final, predictable settlement is easier to describe. Disclosing it is still the operator's job.</td></tr>
+      <tr><td><strong>Records, reconciliation and reporting</strong> for underlying assets. <em>Draft:</em> keep wallet and address records for seven years and report wallet lists to ASIC every quarter. [[S1|s 912BE(1)(a)(ii)]] [[S5|proposal B5]]</td><td>Public on-chain records. Tokeniser says every compliance check is logged for audit. [[S14|Automated compliance]] [[S15|Knowledge Hub]]</td><td><span class="pill ok">Could help</span> ASIC notes that blockchain transparency may change how disclosure works. How much this helps depends on the final standards. [[S5|para 22]]</td></tr>
+      <tr><td><strong>Retail disclosure</strong>: a DAP/TCP Guide, a voting policy, and copies of communications on request. [[S1|ss 1020AN–1020AR]]</td><td>We found no specific feature for this in the sources reviewed. Tokeniser says it targets professional use. [[S16|Knowledge Hub]]</td><td><span class="pill gap">Not covered by the docs</span> This is a documents-and-process job for the operator.</td></tr>
+      <tr><td><strong>Capital</strong>: net tangible assets, cash needs and audit. <em>Draft:</em> three NTA options are under consultation. [[S5|Section D]]</td><td>Not a technology matter.</td><td><span class="pill na">Depends on the licensee</span></td></tr>
+      <tr><td><strong>Custody and possession</strong>. [[S1|ss 86, 761GB, 761GC]]</td><td>Investors self-custody, with key management and recovery offered. ERC-3643 includes recovery and forced transfer. [[S16|Knowledge Hub]] [[S26|ERC-3643]]</td><td><span class="pill unclear">Unclear</span> See the open question about admin powers above.</td></tr>
+      <tr><td><strong>Status as public digital token infrastructure</strong>. [[S1|s 9E(2)–(3)]]</td><td>Tokeniser says Redbelly is designed to meet the three statutory tests. Redbelly calls itself public digital token infrastructure. [[S12|Technology]] [[S17|Asset tokenisation]]</td><td><span class="pill unclear">Unclear</span> See below.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 id="pdti">The biggest open question: does Redbelly count as public digital token infrastructure?</h3>
+  <div class="claim law"><span class="tag law">The Act says</span>
+    <p>Infrastructure qualifies if its protocols are open-source and publicly accessible standards that work in a non-discretionary way, if they let <em>any person</em> contribute by transmitting, processing and recording records, and if they do not depend on any participant whose role is critical. It can also qualify if regulations prescribe it. [[S1|s 9E(2)–(3)]]</p>
+  </div>
+  <div class="claim asic"><span class="tag asic">ASIC says</span>
+    <p><em>Draft (proposed INFO 225 guidance):</em> infrastructure where "only select persons became able to conduct consensus activities" is not PDTI. ASIC adds that "this could include restrictions for KYC requirements", but is unlikely to include hardware requirements or minimum staking amounts that apply to everyone. ASIC assesses licensing requirements at a point in time, not by reference to a future state. [[S5|Table 9]]</p>
+  </div>
+  <div class="claim company"><span class="tag company">Company statement</span>
+    <ul>
+      <li>"On Redbelly, all network participants must prove they are who they say they are in order to get network access." [[S23|Accredited issuers]] Users claim an access credential (passport and biometric check) before getting write access. [[S22|User access]]</li>
+      <li>Node operators need network access for two accounts and must stake 100,000 RBNT. They are selected based on "previous experience, location and commitment", and submissions are currently closed. [[S24|Become an operator]]</li>
+      <li>Another Redbelly page says AML/CTF and Travel Rule requirements can be applied as needed "without restricting access at the network level". [[S17|Asset tokenisation]]</li>
+      <li>Tokeniser says Redbelly is designed to meet all three tests and that the network has more than 400 validators. Tokeniser also acknowledges that regulations can move the line. [[S12|Technology]] [[S13|Guardrails]]</li>
+    </ul>
+  </div>
+  <div class="claim analysis"><span class="tag analysis">Our analysis</span>
+    <p>On the sources reviewed, it is not clear that Redbelly currently meets the "any person can contribute" test as ASIC proposes to read it. Network access and node operation are gated by identity checks and selection, and Redbelly's own pages describe network-level access in different ways. Three things could settle the question: a change to Redbelly's participation rules, a regulation that prescribes the network under s 9E(3), or final ASIC guidance that differs from the draft.</p>
+    <p>If Redbelly is not PDTI, that does not mean anyone is doing anything wrong. It means the carve-outs Tokeniser points to for settlement, secondary liquidity and collateral would not apply automatically. Each of those activities would then need to be assessed under the ordinary rules. [[S12|Technology]] This is a question for Redbelly, Tokeniser and their advisers, and a useful topic for a submission on CP 392 before 27 November 2026.</p>
+  </div>
+
+  <div class="claim company"><span class="tag company">Context</span>
+    <p>Redbelly says it was selected for the Reserve Bank of Australia's Project Acacia pilot as part of NotCentralised's securitisation use case. [[S27|Project Acacia]] ASIC says it supported Project Acacia (2025–26), which explored the role of digital money in wholesale tokenised asset markets. [[S3|Background]] Taking part in a pilot is not a licence and says nothing about compliance with the new Act.</p>
+  </div>
+</section>
+
+<section id="next" aria-labelledby="next-h">
+  <p class="eyebrow">08</p>
+  <h2 id="next-h">What to watch next</h2>
+  <ul class="watch">
+    <li><strong>27 November 2026:</strong> CP 392 submissions close. Send them to fintech@asic.gov.au. [[S3|26-245MR]]</li>
+    <li><strong>Government regulations:</strong> exemptions and other detail are being designed in parallel with ASIC's consultation, and several of ASIC's proposals depend on them. [[S3|26-245MR]] [[S5|About this paper]]</li>
+    <li><strong>INFO 225 update:</strong> ASIC plans to update INFO 225, including on PDTI, before it finalises the new regulatory guide in early 2027. [[S6|RG 000.22 note]] [[S5|proposal E1]]</li>
+    <li><strong>March 2027:</strong> final standards and guidance are planned. [[S5|p 5, stage 4]]</li>
+    <li><strong>Payments reforms:</strong> some stablecoins will be regulated separately, as "tokenised stored value facilities". [[S5|paras 6–7]]</li>
+    <li><span class="tag analysis">Our analysis</span> <strong>Redbelly and Tokeniser:</strong> whether Redbelly's participation rules change, and how Tokeniser maps its products and any custody functions onto the DAP and TCP definitions.</li>
+  </ul>
+</section>
