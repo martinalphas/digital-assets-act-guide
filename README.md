@@ -13,7 +13,7 @@ A plain-language explainer of the **Corporations Amendment (Digital Assets Frame
 
 | Deliverable | Format | Link |
 |---|---|---|
-| Explainer | PDF (A4, print-ready) | [`1-Explainer/DAF-Act-Tokeniser-Explainer.pdf`](1-Explainer/DAF-Act-Tokeniser-Explainer.pdf) |
+| Explainer | PDF (A4, print-ready, about 20 minutes to read) | [`1-Explainer/DAF-Act-Tokeniser-Explainer.pdf`](1-Explainer/DAF-Act-Tokeniser-Explainer.pdf) |
 | Explainer | Word (editable) | [`1-Explainer/DAF-Act-Tokeniser-Explainer.docx`](1-Explainer/DAF-Act-Tokeniser-Explainer.docx) |
 | Community summary | X thread (9 posts) and short paragraphs | [`2-Community-Summary/Community-Summary.md`](2-Community-Summary/Community-Summary.md) |
 | Source list | Markdown and CSV, with the link-check log | [`3-Source-List/`](3-Source-List/) |
@@ -59,7 +59,7 @@ Every factual claim links to a numbered source with a pinpoint, for example `S1 
 
 - **27 sources.** Primary sources come first: the Act itself (S1) and ASIC material (S2–S10). Redbelly and Tokeniser pages (S11–S27) are used only to report what those organisations say about themselves.
 - **No factual claim relies on news coverage or law-firm commentary.**
-- **Link and content check.** Every source URL was fetched and returned HTTP 200 (27 of 27). For each source, the exact phrase the explainer relies on was confirmed to be present. The log is in [`3-Source-List/linkcheck.json`](3-Source-List/linkcheck.json).
+- **Link and content check.** Every source URL was fetched and returned HTTP 200 (27 of 27, re-checked 30 October 2026). For each source, the exact phrase the explainer relies on was confirmed to be present, including the wording of s 9E that the explainer quotes. The log is in [`3-Source-List/linkcheck.json`](3-Source-List/linkcheck.json).
 
 ### A note on the commencement date
 The Act commences on "the day after the end of the period of 12 months beginning on the day this Act receives the Royal Assent" (s 2). The commencement table published with the Act, and ASIC's latest material (26-245MR and CP 392, 15 October 2026), both give **8 April 2027**. Some earlier ASIC pages, including the April 2026 roadmap, said 9 April 2027. The explainer uses 8 April 2027 and cites all of these sources.
@@ -96,7 +96,7 @@ mkdir work && cp -r 5-Build-Source work/src && cp -r 4-Website work/site
 cp 3-Source-List/linkcheck.json work/src/ && cp work/src/_og.html work/site/
 cd work
 python3 src/linkcheck.py                                   # optional: re-check every source
-PUBLIC_URL=https://github.com/martinalphas/digital-assets-act-guide python3 src/build.py
+python3 src/build.py                                       # links point to the live site; override with PUBLIC_URL
 (cd site && python3 -m http.server 8765 &)
 node src/make_docs.js http://127.0.0.1:8765                # PDF and social image (Playwright)
 python3 src/make_docx.py                                   # Word file (pandoc and python-docx)

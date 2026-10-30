@@ -13,9 +13,10 @@ SRC = ROOT / "src"
 SITE = ROOT / "site"
 OUT = ROOT / "deliverables"
 # PUBLIC_URL: where readers can find the explainer and files (used in the thread, PDF and Word file).
-# DEPLOY_URL: the live website address, if any (used only for social preview tags). Leave empty until deployed.
-SITE_URL = os.environ.get("PUBLIC_URL", "https://github.com/martinalphas/digital-assets-act-guide").rstrip("/")
-DEPLOY_URL = os.environ.get("DEPLOY_URL", "").rstrip("/")
+# DEPLOY_URL: the live website address (used for social preview tags).
+SITE_URL = os.environ.get("PUBLIC_URL", "https://digital-assets-act-guide.vercel.app").rstrip("/")
+DEPLOY_URL = os.environ.get("DEPLOY_URL", SITE_URL).rstrip("/")
+SITE_HOST = re.sub(r"^https?://", "", SITE_URL)
 AS_AT = "26 October 2026"
 TITLE = "Australia's Digital Assets Framework Act: What It Means for Tokeniser"
 SHORT = "DAF Act explainer"
@@ -37,7 +38,7 @@ THREAD = [
     "Australia's Digital Assets Framework Act is now law. From 8 April 2027, digital asset platforms and tokenised custody platforms become regulated financial products, licensed by ASIC.\n\nWhat it means for issuers and Tokeniser, in plain English 🧵\n(General info, not legal advice.)",
     "Two new products:\n\n• Digital asset platform (DAP): an operator holds tokens for clients\n• Tokenised custody platform (TCP): an operator holds a real asset and issues one redeemable token per asset\n\nOperators will generally need an AFS licence.",
     "Key dates:\n\n• 8 Apr 2026: Royal Assent\n• 8 Apr 2027: Act starts, applications open\n• 7 Oct 2027: last day for existing operators to apply (they can keep operating while ASIC decides)\n\nSome earlier ASIC pages said 9 April. ASIC's latest says 8 April.",
-    "Not everyone needs a licence. Exemptions include:\n\n• low-value platforms (up to $10m in transactions a year and $5,000 per client, plus other conditions)\n• people who only mention or arrange a platform as a minor part of their business\n• qualifying public token infrastructure",
+    "No licence is needed for:\n\n• low-value DAPs (up to $10m in transactions over 12 months and $5,000 per client, plus other conditions)\n• only mentioning or arranging a platform as a minor part of your business\n• validating public digital token infrastructure (PDTI)",
     "For issuers on Tokeniser: the Act regulates platforms, not the act of tokenising.\n\nTokenised fund units and shares stay under existing law. ASIC's draft guide says a natively tokenised fund is generally a managed investment scheme, not a TCP.",
     "Where it can bite: if anyone holds investors' tokens or keys, or an issuer mints custody-backed tokens, the new platform rules may apply.\n\nOpen question: do freeze, recovery or forced-transfer admin powers count as \"possessing\" tokens? Worth asking a lawyer.",
     "Redbelly's tools (verifiable credentials, programmable eligibility, KYC'd onboarding, final settlement) could help licensees meet parts of the rules.\n\nBut the legal duties sit with licensees, and no source says Redbelly or Tokeniser is compliant.",
@@ -47,7 +48,7 @@ THREAD = [
 THREAD = [t.replace("{url}", SITE_URL) for t in THREAD]
 
 PARAGRAPHS = [
-    "Australia's Corporations Amendment (Digital Assets Framework) Act 2026 received Royal Assent on 8 April 2026 and starts on 8 April 2027. It makes two kinds of platform into regulated financial products. In a digital asset platform, an operator holds tokens for clients. In a tokenised custody platform, an operator holds a real asset and issues one redeemable token for each asset. Operators will generally need an Australian financial services licence from ASIC. Platforms already operating must apply by 7 October 2027 and can keep operating while ASIC decides. Some low-value platforms, people who only introduce a platform as a minor part of their business, and qualifying public blockchain infrastructure are exempt.",
+    "Australia's Corporations Amendment (Digital Assets Framework) Act 2026 received Royal Assent on 8 April 2026 and starts on 8 April 2027. It makes two kinds of platform into regulated financial products. In a digital asset platform, an operator holds tokens for clients. In a tokenised custody platform, an operator holds a real asset and issues one redeemable token for each asset. Operators will generally need an Australian financial services licence from ASIC. Platforms already operating must apply by 7 October 2027 and can keep operating while ASIC decides. Some low-value digital asset platforms, and people who only introduce a platform as a minor part of their business, do not need a licence. Public digital token infrastructure is not itself a financial product, and validating it is not a financial service.",
     "For issuers who tokenise through Tokeniser, the Act regulates platforms rather than the act of tokenising. Tokenised fund units and shares stay under the existing rules. ASIC's draft guidance says a natively tokenised fund is generally a managed investment scheme rather than a tokenised custody platform. The new rules matter where someone holds tokens or keys for investors, or where an issuer creates tokens backed by assets held in custody.",
     "Redbelly's identity and eligibility tools could help licensees meet parts of the new rules. But the legal duties sit with licensees, and no source we reviewed says Redbelly or Tokeniser is compliant. The biggest open question is whether Redbelly counts as \"public digital token infrastructure\", given ASIC's draft view on identity checks for validators. ASIC is consulting until 27 November 2026. This is general information, not legal advice.",
 ]
@@ -140,49 +141,61 @@ def community_html(interactive=True) -> str:
 </section>"""
 
 
-def sources_html() -> str:
+def check_result(sid):
+    if not linkcheck:
+        return None
+    return next((r for r in linkcheck["results"] if r["id"] == sid), None)
+
+
+def sources_html(num="10", with_checks=False) -> str:
     items = []
     for s in sources:
+        check = ""
+        r = check_result(s["id"]) if with_checks else None
+        if r:
+            check = f'<div class="sused"><strong>Link check:</strong> HTTP {r["status"]}; {html.escape(r.get("note", ""))}</div>'
         items.append(
             f'<li id="{s["id"]}"><span class="sid">{s["id"]}</span><span class="stitle">{html.escape(s["title"])}</span>'
             f'<span class="stype">{html.escape(s["type"])}</span>'
             f'<div class="smeta">{html.escape(s["publisher"])} · {html.escape(s["date"])}</div>'
             f'<div class="surl"><a href="{html.escape(s["url"])}" rel="noopener" target="_blank">{html.escape(s["url"])}</a></div>'
-            f'<div class="sused"><strong>Supports:</strong> {html.escape(s["used_for"])}</div></li>'
+            f'<div class="sused"><strong>Supports:</strong> {html.escape(s["used_for"])}</div>{check}</li>'
         )
     return f"""
 <section id="sources" aria-labelledby="sources-h">
-  <p class="eyebrow">10</p>
+  <p class="eyebrow">{num}</p>
   <h2 id="sources-h">Sources</h2>
   <p>Primary sources come first: the Act itself (S1) and ASIC material (S2–S10). Redbelly and Tokeniser pages (S11–S27) are used only to report what those organisations say about themselves, and are labelled that way in the text. No factual claim relies on news coverage or law-firm commentary. Every in-text citation gives a pinpoint (a section, paragraph, table or page section).</p>
   <ol class="sources">{''.join(items)}</ol>
 </section>"""
 
 
-def verification_html() -> str:
+def verification_html(num="11", table=True) -> str:
     rows = ""
     summary = "<p>Link check results were not available when this file was built.</p>"
+    results_at = "The results are below." if table else "The result for each source is shown under it in the Sources list below."
     if linkcheck:
         ok = sum(1 for r in linkcheck["results"] if r["status"] == 200)
         total = len(linkcheck["results"])
         summary = (f'<p><strong>{ok} of {total}</strong> source links returned HTTP 200 when checked on '
                    f'{html.escape(linkcheck["checked_at"])}.</p>')
-        for r in linkcheck["results"]:
+        for r in (linkcheck["results"] if table else []):
             cls = "status-ok" if r["status"] == 200 else ""
             rows += (f'<tr><th scope="row">{r["id"]}</th><td class="{cls}">{r["status"]}</td>'
                      f'<td>{html.escape(r.get("note", ""))}</td></tr>')
-        rows = (f'<div class="table-wrap"><table class="check-table"><thead><tr><th scope="col">Source</th>'
-                f'<th scope="col">HTTP status</th><th scope="col">Content check</th></tr></thead><tbody>{rows}</tbody></table></div>')
+        if rows:
+            rows = (f'<div class="table-wrap"><table class="check-table"><thead><tr><th scope="col">Source</th>'
+                    f'<th scope="col">HTTP status</th><th scope="col">Content check</th></tr></thead><tbody>{rows}</tbody></table></div>')
     return f"""
 <section id="verification" aria-labelledby="verification-h">
-  <p class="eyebrow">11</p>
+  <p class="eyebrow">{num}</p>
   <h2 id="verification-h">How we checked</h2>
   <ul>
     <li>We read the full text of the Act as made, from the Federal Register of Legislation, and took every definition, threshold and date from it. [[S1|whole Act]]</li>
     <li>We read ASIC's roadmap, media releases, CP 392 and the draft regulatory guide. Where ASIC is only proposing something, the text says <em>draft</em>. [[S2|Roadmap]] [[S5|CP 392]] [[S6|draft RG 000]]</li>
     <li>We checked the commencement date against both the Act and ASIC's latest material, and explain the 8/9 April difference <a href="#date-note">in the timeline</a>.</li>
     <li>Statements by Redbelly and Tokeniser are labelled as company statements and are not treated as facts about the law.</li>
-    <li>Each source was fetched and its cited content confirmed against the text it supports. The results are below.</li>
+    <li>Each source was fetched and its cited content confirmed against the text it supports. {results_at}</li>
   </ul>
   {summary}
   {rows}
@@ -367,7 +380,7 @@ PRINT_CSS = """
 @page { size: A4; margin: 16mm 15mm 18mm 15mm; }
 @page :first { margin: 0; }
 html, body { background: #fff; }
-body { font-size: 10.6pt; line-height: 1.55; }
+body { font-size: 10.2pt; line-height: 1.5; }
 .cover { height: 297mm; width: 210mm; background: #142530; color: #E7EBEE; position: relative; overflow: hidden;
   -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-after: always; break-after: page; }
 .cover::after { content: ""; position: absolute; inset: 0; background-image: url("assets/hex.svg"); background-size: 110px auto; opacity: .55; }
@@ -382,11 +395,15 @@ body { font-size: 10.6pt; line-height: 1.55; }
 .cover .warn { margin-top: 8mm; font-size: 9.5pt; color: #fff; border-left: 3px solid #FF5050; padding-left: 4mm; }
 .doc { padding: 0; }
 .doc h2 { font-size: 18pt; margin-top: 0; }
-.doc h3 { font-size: 12.5pt; margin-top: 6mm; }
-.doc > section { margin-bottom: 9mm; }
-.doc > section#glance, .doc > section#licence, .doc > section#issuers, .doc > section#redbelly,
-.doc > section#community, .doc > section#sources { break-before: page; }
-.doc h2, .doc h3 { break-after: avoid; }
+.doc h3 { font-size: 12.5pt; margin-top: 5mm; }
+.doc > section { margin-bottom: 7mm; padding-top: 0; }
+.doc > section#sources { break-before: page; }
+.doc h2, .doc h3, .doc .eyebrow { break-after: avoid; }
+.claim { padding: 2.6mm 3.6mm .4mm; margin-bottom: 3mm; }
+.claim > .tag { margin-bottom: 1.6mm; }
+th, td { padding: 2.2mm 2.6mm; }
+.sources li { padding: 1.8mm 0; font-size: 9pt; }
+.sources .smeta, .sources .surl, .sources .sused { font-size: 8.4pt; }
 .claim, .post, .steps li, .timeline li, tr, .callout, .fact, .sources li { break-inside: avoid; }
 .claim { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 thead th, .tag, .pill, a.cite, .notice, .steps li::before, .timeline li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -419,12 +436,14 @@ def print_page(body_main: str) -> str:
     <div><b>Commences</b>8 April 2027 (Act s 2; ASIC CP 392)</div>
     <div><b>Existing operators apply by</b>7 October 2027</div>
     <div><b>Information current as at</b>{AS_AT}</div>
+    <div><b>Read online, with every source</b>{SITE_HOST}</div>
+    <div><b>Reading time</b>About 20 minutes</div>
   </div>
   <p class="warn">General information only. This is not legal, financial, tax or investment advice. It is not an official publication of Redbelly Network, Tokeniser, ASIC or the Australian Government, and it does not claim that anyone is licensed or compliant.</p>
 </div></div>
 <main class="doc">
 {body_main}
-<p class="small">Explainer files and sources online: <a href="{SITE_URL}">{SITE_URL}</a></p>
+<p class="small">Read online, with the community summary and downloads: <a href="{SITE_URL}">{SITE_URL}</a></p>
 </main>
 </body>
 </html>
@@ -437,7 +456,9 @@ def build():
     site_main = main_core + community_html(True) + sources_html() + verification + downloads_html()
     (SITE / "index.html").write_text(site_page(site_main))
 
-    print_main = main_core + community_html(False) + sources_html() + verification
+    # The PDF and Word file carry the explainer itself; the community summary ships as its own file.
+    print_verification = add_data_labels(render_cites(verification_html("09", table=False)))
+    print_main = main_core + print_verification + sources_html("10", with_checks=True)
     (SITE / "_print.html").write_text(print_page(print_main))
 
     # Word version: labels become bracketed bold text so they survive conversion.
@@ -447,7 +468,7 @@ def build():
     docx_main = re.sub(r'<p class="eyebrow">\d+</p>', '', docx_main)
     notice = ("<p><strong>General information only. Not legal, financial, tax or investment advice.</strong> "
               f"Information current as at {AS_AT}. Not an official publication of Redbelly Network, Tokeniser, ASIC "
-              f"or the Australian Government. Explainer files and sources online: <a href=\"{SITE_URL}\">{SITE_URL}</a></p>")
+              f"or the Australian Government. Read online, with the community summary and downloads: <a href=\"{SITE_URL}\">{SITE_URL}</a></p>")
     (SITE / "_docx.html").write_text(
         f'<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><title>{html.escape(TITLE)}</title></head>'
         f'<body><p><em>A plain-language explainer for issuers, holders and the Redbelly community</em></p>'
@@ -468,7 +489,8 @@ def build():
     (OUT / "Community-Summary.md").write_text("\n".join(md))
 
     # Sources (Markdown + CSV)
-    smd = [f"# Source list: {TITLE}", "", f"Accessed and checked {AS_AT}. Primary sources (the Act and ASIC) are S1–S10. "
+    checked = f" Links and cited phrases re-checked {linkcheck['checked_at']}." if linkcheck else ""
+    smd = [f"# Source list: {TITLE}", "", f"Accessed {AS_AT}.{checked} Primary sources (the Act and ASIC) are S1–S10. "
            "Company and technical sources (S11–S27) are used only to report what those organisations say about themselves.", ""]
     for s in sources:
         status = ""

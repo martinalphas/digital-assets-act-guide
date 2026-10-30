@@ -14,7 +14,8 @@ sources = json.loads((SRC / "sources.json").read_text())
 
 # A phrase from each source that a cited statement depends on.
 EXPECT = {
-    "S1": ["day after the end of the period of 12 months", "$10 million", "$5,000", "761GD Meaning of tokenised custody platform", "transition period means the 6"],
+    "S1": ["day after the end of the period of 12 months", "$10 million", "$5,000", "761GD Meaning of tokenised custody platform", "transition period means the 6",
+           "a set of open source and publicly accessible standards for transmitting, processing and recording electronic records in a non-discretionary manner", "permit any person to contribute"],
     "S2": ["passed Parliament on 1 April 2026", "9 April 2027", "18-month"],
     "S3": ["commencing on 8 April 2027", "same activity, same risk, same regulatory outcome", "27 November 2026", "30 September 2026"],
     "S4": ["asset-holding standards", "transactional and settlement standards"],
@@ -62,7 +63,8 @@ def to_text(body, ctype, url):
         t = re.sub(r"<[^>]+>", " ", t)
         import html as h
         t = h.unescape(t)
-    t = t.replace("’", "'").replace("‘", "'").replace("‑", "-").replace("\xa0", " ")
+    t = re.sub(r"\s*‑\s*", "-", t)  # the Act's HTML puts spaces around its non-breaking hyphens
+    t = t.replace("’", "'").replace("‘", "'").replace("\xa0", " ")
     return re.sub(r"\s+", " ", t)
 
 

@@ -1,6 +1,6 @@
 # Community summary: Australia's Digital Assets Framework Act: What It Means for Tokeniser
 
-_General information only, not legal advice. As at 26 October 2026. Full explainer and sources: https://github.com/martinalphas/digital-assets-act-guide_
+_General information only, not legal advice. As at 26 October 2026. Full explainer and sources: https://digital-assets-act-guide.vercel.app_
 
 ## X thread (9 posts)
 
@@ -36,13 +36,13 @@ Some earlier ASIC pages said 9 April. ASIC's latest says 8 April.
 
 ---
 
-**4/9** (276/280 characters)
+**4/9** (263/280 characters)
 
-Not everyone needs a licence. Exemptions include:
+No licence is needed for:
 
-• low-value platforms (up to $10m in transactions a year and $5,000 per client, plus other conditions)
-• people who only mention or arrange a platform as a minor part of their business
-• qualifying public token infrastructure
+• low-value DAPs (up to $10m in transactions over 12 months and $5,000 per client, plus other conditions)
+• only mentioning or arranging a platform as a minor part of your business
+• validating public digital token infrastructure (PDTI)
 
 ---
 
@@ -82,7 +82,7 @@ ASIC's draft view: if only select people can validate (e.g. because of KYC limit
 
 Next: ASIC's CP 392 consultation closes 27 Nov 2026. Final rules are planned for March 2027.
 
-Full explainer, timeline and every source: https://github.com/martinalphas/digital-assets-act-guide
+Full explainer, timeline and every source: https://digital-assets-act-guide.vercel.app
 
 General information only. Not legal, financial or investment advice.
 
@@ -90,7 +90,7 @@ General information only. Not legal, financial or investment advice.
 
 ## Short paragraphs
 
-Australia's Corporations Amendment (Digital Assets Framework) Act 2026 received Royal Assent on 8 April 2026 and starts on 8 April 2027. It makes two kinds of platform into regulated financial products. In a digital asset platform, an operator holds tokens for clients. In a tokenised custody platform, an operator holds a real asset and issues one redeemable token for each asset. Operators will generally need an Australian financial services licence from ASIC. Platforms already operating must apply by 7 October 2027 and can keep operating while ASIC decides. Some low-value platforms, people who only introduce a platform as a minor part of their business, and qualifying public blockchain infrastructure are exempt.
+Australia's Corporations Amendment (Digital Assets Framework) Act 2026 received Royal Assent on 8 April 2026 and starts on 8 April 2027. It makes two kinds of platform into regulated financial products. In a digital asset platform, an operator holds tokens for clients. In a tokenised custody platform, an operator holds a real asset and issues one redeemable token for each asset. Operators will generally need an Australian financial services licence from ASIC. Platforms already operating must apply by 7 October 2027 and can keep operating while ASIC decides. Some low-value digital asset platforms, and people who only introduce a platform as a minor part of their business, do not need a licence. Public digital token infrastructure is not itself a financial product, and validating it is not a financial service.
 
 For issuers who tokenise through Tokeniser, the Act regulates platforms rather than the act of tokenising. Tokenised fund units and shares stay under the existing rules. ASIC's draft guidance says a natively tokenised fund is generally a managed investment scheme rather than a tokenised custody platform. The new rules matter where someone holds tokens or keys for investors, or where an issuer creates tokens backed by assets held in custody.
 

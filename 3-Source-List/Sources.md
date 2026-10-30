@@ -1,6 +1,6 @@
 # Source list: Australia's Digital Assets Framework Act: What It Means for Tokeniser
 
-Accessed and checked 26 October 2026. Primary sources (the Act and ASIC) are S1–S10. Company and technical sources (S11–S27) are used only to report what those organisations say about themselves.
+Accessed 26 October 2026. Links and cited phrases re-checked 30 October 2026, 19:24 UTC. Primary sources (the Act and ASIC) are S1–S10. Company and technical sources (S11–S27) are used only to report what those organisations say about themselves.
 
 **S1. Corporations Amendment (Digital Assets Framework) Act 2026 (No. 38, 2026), as made, C2026A00038**  
 Federal Register of Legislation (Australian Government) · Assented to 8 April 2026 · Primary: legislation — link check: HTTP 200  
